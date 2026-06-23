@@ -1,0 +1,2 @@
+[console_scripts]
+astro = astro_tasks.cli:main
