@@ -1,3 +1,5 @@
+README.md
+pyproject.toml
 setup.py
 astro_tasks/__init__.py
 astro_tasks/__main__.py
