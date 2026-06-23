@@ -53,9 +53,9 @@ def run():
 
         parts = [f"branch: {branch}"]
         if info["dirty"]:
-            parts.append(f"{display.ICON_ALERT} dirty")
+            parts.append("dirty")
         if info["unpushed"] > 0:
-            parts.append(f"{display.ICON_ROCKET} {info['unpushed']} unpushed")
+            parts.append(f"{info['unpushed']} unpushed")
         elif info["unpushed"] == -1:
             parts.append("no remote tracking")
 

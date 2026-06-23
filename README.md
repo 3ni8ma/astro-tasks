@@ -1,6 +1,7 @@
-# Astro Tasks 🚀🪐
+# Astro Tasks
 
-**Pre-flight checklist for developers.** One command to check GitHub status, today's coding stats, and local repo health before you start coding.
+Pre-flight checklist for developers. One command to check GitHub status,
+coding stats, and local repo health before starting work.
 
 ## Quick Start
 
@@ -11,46 +12,51 @@ astro check
 
 ## Commands
 
-| Command | What it does |
+| Command | Description |
 |---------|-------------|
-| `astro check` | Full pre-flight dashboard — GitHub notifications, open PRs, coding stats, repo health |
-| `astro scan` | Scan all local repos for dirty branches, unpushed commits, stale remotes |
-| `astro log` | Show last 7 days coding stats from Hackatime |
-| `astro --version` | Show version |
+| `astro check` | Full dashboard: GitHub notifications, open PRs, coding stats, repo health |
+| `astro scan` | Scan local repos for dirty branches and unpushed commits |
+| `astro log` | Show coding stats from Hackatime (last 7 days) |
+| `astro --version` | Print version |
 
 ## Example
 
 ```
-🚀 ASTRO TASKS  🪐
-  Pre-flight checklist for developers
+>>> ASTRO TASKS <<<
+  pre-flight checklist
 
-  ⭐  GitHub Status
-    ✅  Unread notifications: 3
-    ✅  Open PRs: 1
+  [*] GitHub Status
+  ------------------------------------------
+    [+] Unread notifications: 3
+    [+] Open PRs: 1
 
-  ⭐  Coding Stats (Last 7 Days)
-    ✅  Total time: 40 hrs 12 mins
-    ✅  Daily average: 10 hrs 4 mins
-    ✅  Active days: 4
+  [*] Coding Stats (Last 7 Days)
+  ------------------------------------------
+    [+] Total time: 40 hrs 12 mins
+    [+] Daily average: 10 hrs 4 mins
+    [+] Active days: 4
 
-  ⭐  Top Projects
-    ✅    react-hooks: 11 hrs 39 mins
-    ✅    TheCoderBros-Website: 10 hrs 23 mins
+  [*] Top Projects
+  ------------------------------------------
+    [+]   react-hooks: 11 hrs 39 mins
+    [+]   TheCoderBros-Website: 10 hrs 23 mins
 
-  ⭐  Languages
-    ✅    TypeScript: 35 hrs 12 mins
-    ✅    Python: 7 hrs 53 mins
+  [*] Languages
+  ------------------------------------------
+    [+]   TypeScript: 35 hrs 12 mins
+    [+]   Python: 7 hrs 53 mins
 
-  ⭐  Local Repo Scan
-    ✅  cli-tool: branch: main
-    ✅  3ni8ma: branch: main | 🚀 2 unpushed
+  [*] Local Repo Scan
+  ------------------------------------------
+    [+] cli-tool: branch: main
+    [!] 3ni8ma: branch: main | 2 unpushed
 ```
 
 ## Requirements
 
 - Python 3.8+
 - `gh` CLI authenticated (`gh auth status`)
-- Hackatime/WakaTime config at `~/.wakatime.cfg`
+- Hackatime / WakaTime config at `~/.wakatime.cfg`
 
 ## License
 
