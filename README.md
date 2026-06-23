@@ -15,8 +15,10 @@ astro check
 | Command | Description |
 |---------|-------------|
 | `astro check` | Full dashboard: GitHub notifications, open PRs, coding stats, repo health |
+| `astro check --json` | Same info as JSON (for piping into other tools) |
 | `astro scan` | Scan local repos for dirty branches and unpushed commits |
 | `astro log` | Show coding stats from Hackatime (last 7 days) |
+| `astro config` | Show current configuration (WakaTime, GitHub auth, tracked repos) |
 | `astro --version` | Print version |
 
 ## Example

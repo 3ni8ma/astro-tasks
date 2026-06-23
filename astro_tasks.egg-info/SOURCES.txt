@@ -5,6 +5,7 @@ astro_tasks/__init__.py
 astro_tasks/__main__.py
 astro_tasks/cli.py
 astro_tasks/config.py
+astro_tasks/config_check.py
 astro_tasks/display.py
 astro_tasks/github_check.py
 astro_tasks/hackatime_check.py

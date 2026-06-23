@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: astro-tasks
-Version: 0.1.1
+Version: 0.1.2
 Summary: Pre-flight checklist for developers — GitHub status, coding stats, repo health in one command
 Home-page: https://github.com/3ni8ma/astro-tasks
 Author: Aarush Karak
@@ -29,7 +29,7 @@ coding stats, and local repo health before starting work.
 ## Quick Start
 
 ```bash
-pip install -e .
+pip install astro-tasks
 astro check
 ```
 
@@ -38,8 +38,10 @@ astro check
 | Command | Description |
 |---------|-------------|
 | `astro check` | Full dashboard: GitHub notifications, open PRs, coding stats, repo health |
+| `astro check --json` | Same info as JSON (for piping into other tools) |
 | `astro scan` | Scan local repos for dirty branches and unpushed commits |
 | `astro log` | Show coding stats from Hackatime (last 7 days) |
+| `astro config` | Show current configuration (WakaTime, GitHub auth, tracked repos) |
 | `astro --version` | Print version |
 
 ## Example
