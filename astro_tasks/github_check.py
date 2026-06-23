@@ -19,10 +19,17 @@ def get_notifications():
 
 
 def get_open_prs():
+    # Run from any tracked repo so gh can find its git context
+    cwd = None
+    for repo in config.REPOS:
+        import os
+        if os.path.isdir(os.path.join(repo["dir"], ".git")):
+            cwd = repo["dir"]
+            break
     result = subprocess.run(
         ["gh", "pr", "list", "--author", config.GITHUB_USER, "--state", "open",
          "--json", "number,title,headRefName,baseRefName"],
-        capture_output=True, text=True, timeout=15
+        capture_output=True, text=True, timeout=15, cwd=cwd
     )
     if result.returncode != 0:
         return None, result.stderr.strip()
