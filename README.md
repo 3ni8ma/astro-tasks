@@ -6,7 +6,7 @@ coding stats, and local repo health before starting work.
 ## Quick Start
 
 ```bash
-pip install -e .
+pip install astro-tasks
 astro check
 ```
 
