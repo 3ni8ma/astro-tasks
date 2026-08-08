@@ -4,7 +4,7 @@ import sys
 from . import display
 from . import config
 from . import github_check
-from . import hackatime_check
+from . import wakatime_check
 from . import repo_check
 from . import config_check
 
@@ -17,7 +17,7 @@ def cmd_check(args):
         return
     display.banner()
     github_check.run()
-    hackatime_check.run()
+    wakatime_check.run()
     repo_check.run()
     print()
 
@@ -30,7 +30,7 @@ def cmd_scan(args):
 
 def cmd_log(args):
     display.banner()
-    hackatime_check.run()
+    wakatime_check.run()
     print()
 
 
@@ -61,7 +61,7 @@ def main():
     p_scan = sub.add_parser("scan", help="Scan local repos for issues")
     p_scan.set_defaults(func=cmd_scan)
 
-    p_log = sub.add_parser("log", help="Show today's coding log from Hackatime")
+    p_log = sub.add_parser("log", help="Show today's coding log from WakaTime")
     p_log.set_defaults(func=cmd_log)
 
     p_config = sub.add_parser("config", help="Show current configuration")

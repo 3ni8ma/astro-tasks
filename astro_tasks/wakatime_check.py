@@ -35,11 +35,11 @@ def run():
 
     stats, err = get_stats()
     if err:
-        display.print_warn("Hackatime", f"Could not fetch: {err}")
+        display.print_warn("WakaTime", f"Could not fetch: {err}")
         return
 
     if not stats:
-        display.print_info("Hackatime", "No data yet")
+        display.print_info("WakaTime", "No data yet")
         return
 
     total = stats.get("human_readable_total", "N/A")
