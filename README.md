@@ -1,5 +1,12 @@
 # Astro Tasks
 
+[![PyPI version](https://img.shields.io/pypi/v/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Python](https://img.shields.io/pypi/pyversions/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Downloads](https://img.shields.io/pypi/dm/astro-tasks)](https://pypi.org/project/astro-tasks/)
+
+> Pre-flight checklist for developers. One command to check GitHub status,
+> coding stats, and local repo health before starting work.
+
 Pre-flight checklist for developers. One command to check GitHub status,
 coding stats, and local repo health before starting work.
 
