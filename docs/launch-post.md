@@ -1,25 +1,4 @@
-# Launch drafts — review before posting (do not auto-post)
-
-## r/Python (title)
-Show: astro-tasks — one command pre-flight check (GitHub, WakaTime, repo health)
-
-## r/Python (body)
-I built a small Python CLI for my morning routine: one command that shows
-GitHub notifications + open PRs (via `gh`), WakaTime stats for the last
-7 days, and local repo health (dirty branches, unpushed commits).
-
-```bash
-pip install astro-tasks
-astro check
-```
-
-`astro check --json` emits the same data as JSON for piping into other tools.
-`astro scan` checks local repos only, `astro log` shows coding stats,
-`astro config` shows current configuration.
-
-Requires Python 3.8+, `gh` CLI auth, and a WakaTime config. MIT licensed.
-Repo: https://github.com/3ni8ma/astro-tasks — feedback welcome, especially
-on the JSON schema and multi-machine WakaTime setups.
+# Launch draft — review before publishing (do not auto-post)
 
 ## dev.to (title)
 A one-command pre-flight checklist for developers: astro-tasks
@@ -41,5 +20,5 @@ https://github.com/3ni8ma/astro-tasks
 
 ## Checklist before posting
 - [x] Publish 0.2.0 to PyPI so `pip install` matches GitHub (live 2026-09-19)
-- [ ] Upload `docs/Astro-Tasks-thumbnail.png` at GitHub repo → Settings → Social preview
-- [ ] Pin the repo on your GitHub profile
+- [x] Upload `docs/Astro-Tasks-thumbnail.png` at GitHub repo → Settings → Social preview (done 2026-09-19)
+- [x] Pin the repo on your GitHub profile (done 2026-09-19, astro-tasks first of 6)
