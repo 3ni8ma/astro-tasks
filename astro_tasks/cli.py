@@ -9,11 +9,41 @@ from . import repo_check
 from . import config_check
 
 
+def collect_check_data():
+    notifs, notifs_err = github_check.get_notifications()
+    prs, prs_err = github_check.get_open_prs()
+    stats, stats_err = wakatime_check.get_stats()
+
+    repos = []
+    for repo in config.REPOS:
+        branch, info, err = repo_check.git_status(repo["dir"])
+        repos.append({
+            "name": repo["name"],
+            "dir": repo["dir"],
+            "branch": branch,
+            "unpushed": info["unpushed"] if info else None,
+            "dirty": info["dirty"] if info else None,
+            "error": err,
+        })
+
+    return {
+        "github": {
+            "notifications": notifs if notifs_err is None else None,
+            "unread_notifications": sum(1 for n in (notifs or []) if n.get("unread")) if notifs_err is None else None,
+            "open_prs": prs if prs_err is None else None,
+            "open_prs_count": len(prs or []) if prs_err is None else None,
+            "errors": {"notifications": notifs_err, "prs": prs_err},
+        },
+        "coding_stats": stats if stats_err is None else None,
+        "coding_stats_error": stats_err,
+        "repos": repos,
+    }
+
+
 def cmd_check(args):
     if args.json:
         import json
-        data = {"status": "ok"}
-        print(json.dumps(data))
+        print(json.dumps(collect_check_data(), indent=2, default=str))
         return
     display.banner()
     github_check.run()

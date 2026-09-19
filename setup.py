@@ -22,9 +22,19 @@ setup(
         "colorama>=0.4.6",
     ],
     python_requires=">=3.8",
+    keywords=["cli", "developer-tools", "github", "wakatime", "productivity", "dashboard"],
+    project_urls={
+        "Homepage": "https://github.com/3ni8ma/astro-tasks",
+        "Bug Reports": "https://github.com/3ni8ma/astro-tasks/issues",
+        "Source": "https://github.com/3ni8ma/astro-tasks",
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Environment :: Console",
+        "Topic :: Software Development",
+        "Topic :: Utilities",
     ],
 )
