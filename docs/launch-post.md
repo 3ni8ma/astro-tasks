@@ -40,6 +40,6 @@ stats need a WakaTime config at `~/.wakatime.cfg`. Python 3.8+, MIT.
 https://github.com/3ni8ma/astro-tasks
 
 ## Checklist before posting
-- [ ] Publish 0.2.0 to PyPI so `pip install` matches GitHub
+- [x] Publish 0.2.0 to PyPI so `pip install` matches GitHub (live 2026-09-19)
 - [ ] Upload `docs/Astro-Tasks-thumbnail.png` at GitHub repo → Settings → Social preview
 - [ ] Pin the repo on your GitHub profile
