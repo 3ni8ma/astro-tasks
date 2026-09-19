@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: astro-tasks
-Version: 0.2.0
+Version: 0.2.1
 Summary: Pre-flight checklist for developers — GitHub status, coding stats, repo health in one command
 Home-page: https://github.com/3ni8ma/astro-tasks
 Author: Aarush Karak
@@ -44,7 +44,7 @@ Dynamic: summary
 > Pre-flight checklist for developers. One command to check GitHub status,
 > coding stats, and local repo health before starting work.
 
-![Astro Tasks demo](astro-tasks-demo.png)
+![Astro Tasks demo](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/astro-tasks-demo.png)
 
 ## Features
 

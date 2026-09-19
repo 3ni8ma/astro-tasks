@@ -9,7 +9,7 @@
 > Pre-flight checklist for developers. One command to check GitHub status,
 > coding stats, and local repo health before starting work.
 
-![Astro Tasks demo](astro-tasks-demo.png)
+![Astro Tasks demo](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/astro-tasks-demo.png)
 
 ## Features
 
