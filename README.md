@@ -2,7 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/astro-tasks)](https://pypi.org/project/astro-tasks/)
 [![Python](https://img.shields.io/pypi/pyversions/astro-tasks)](https://pypi.org/project/astro-tasks/)
-[![Downloads](https://img.shields.io/pypi/dm/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Downloads](https://static.pepy.tech/badge/astro-tasks)](https://pepy.tech/project/astro-tasks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/3ni8ma/astro-tasks)](https://github.com/3ni8ma/astro-tasks/stargazers)
 [![RepoRanker](https://reporanker.com/badge/3ni8ma/astro-tasks)](https://reporanker.com/repos/3ni8ma/astro-tasks)
