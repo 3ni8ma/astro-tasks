@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 setup.py
@@ -8,11 +9,12 @@ astro_tasks/config.py
 astro_tasks/config_check.py
 astro_tasks/display.py
 astro_tasks/github_check.py
-astro_tasks/wakatime_check.py
 astro_tasks/repo_check.py
+astro_tasks/wakatime_check.py
 astro_tasks.egg-info/PKG-INFO
 astro_tasks.egg-info/SOURCES.txt
 astro_tasks.egg-info/dependency_links.txt
 astro_tasks.egg-info/entry_points.txt
 astro_tasks.egg-info/requires.txt
 astro_tasks.egg-info/top_level.txt
+tests/test_json_output.py

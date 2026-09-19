@@ -1,30 +1,56 @@
 Metadata-Version: 2.4
 Name: astro-tasks
-Version: 0.1.2
+Version: 0.2.0
 Summary: Pre-flight checklist for developers — GitHub status, coding stats, repo health in one command
 Home-page: https://github.com/3ni8ma/astro-tasks
 Author: Aarush Karak
 License: MIT
+Project-URL: Homepage, https://github.com/3ni8ma/astro-tasks
+Project-URL: Bug Reports, https://github.com/3ni8ma/astro-tasks/issues
+Project-URL: Source, https://github.com/3ni8ma/astro-tasks
+Keywords: cli,developer-tools,github,wakatime,productivity,dashboard
 Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: colorama>=0.4.6
 Dynamic: author
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
+Dynamic: keywords
 Dynamic: license
+Dynamic: license-file
+Dynamic: project-url
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
 # Astro Tasks
 
-Pre-flight checklist for developers. One command to check GitHub status,
-coding stats, and local repo health before starting work.
+[![PyPI version](https://img.shields.io/pypi/v/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Python](https://img.shields.io/pypi/pyversions/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Downloads](https://img.shields.io/pypi/dm/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/3ni8ma/astro-tasks)](https://github.com/3ni8ma/astro-tasks/stargazers)
+
+> Pre-flight checklist for developers. One command to check GitHub status,
+> coding stats, and local repo health before starting work.
+
+![Astro Tasks demo](astro-tasks-demo.png)
+
+## Features
+
+- GitHub notifications + open PRs via `gh` CLI
+- Coding stats from WakaTime (last 7 days, top projects, languages)
+- Local repo health scan (dirty branches, unpushed commits)
 
 ## Quick Start
 
