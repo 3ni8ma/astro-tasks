@@ -9,7 +9,7 @@
 > Pre-flight checklist for developers. One command to check GitHub status,
 > coding stats, and local repo health before starting work.
 
-![Astro Tasks demo](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/astro-tasks-demo.png)
+![Astro Tasks](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/docs/Astro-Tasks-thumbnail.png)
 
 ## Features
 
@@ -66,6 +66,41 @@ astro check
   ------------------------------------------
     [+] cli-tool: branch: main
     [!] 3ni8ma: branch: main | 2 unpushed
+```
+
+`astro scan` — repos only, no API calls:
+
+```
+  [*] Local Repo Scan
+  ------------------------------------------
+    [+] 3ni8ma: branch: main | dirty
+    [+] cli-tool: branch: main | dirty
+    [+] TheCoderBros-Website: branch: main
+    [+] aarushkarak-website: branch: main
+    [+] react-hooks: branch: main
+    [+] tailwind-plugin: branch: main | dirty
+    [+] vite-plugin: branch: main | dirty
+    [+] astro-tasks: branch: main
+```
+
+`astro check --json` — same data, machine-readable (truncated):
+
+```json
+{
+  "github": {
+    "unread_notifications": 3,
+    "open_prs_count": 1,
+    "open_prs": [
+      {"number": 1, "title": "...", "headRefName": "feat", "baseRefName": "main"}
+    ],
+    "errors": {"notifications": null, "prs": null}
+  },
+  "coding_stats": {"human_readable_total": "40 hrs 12 mins"},
+  "coding_stats_error": null,
+  "repos": [
+    {"name": "astro-tasks", "branch": "main", "unpushed": 0, "dirty": false, "error": null}
+  ]
+}
 ```
 
 ## Requirements
