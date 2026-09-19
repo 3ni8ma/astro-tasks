@@ -41,5 +41,5 @@ https://github.com/3ni8ma/astro-tasks
 
 ## Checklist before posting
 - [ ] Publish 0.2.0 to PyPI so `pip install` matches GitHub
-- [ ] Upload `docs/social-preview.png` at GitHub repo → Settings → Social preview
+- [ ] Upload `docs/Astro-Tasks-thumbnail.png` at GitHub repo → Settings → Social preview
 - [ ] Pin the repo on your GitHub profile
