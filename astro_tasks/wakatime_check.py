@@ -10,16 +10,18 @@ def get_stats():
     cfg = configparser.ConfigParser()
     cfg.read(config.WAKATIME_CFG)
     api_key = cfg.get("settings", "api_key", fallback=None)
-    api_url = cfg.get("settings", "api_url", fallback=None)
+    # Standard wakatime.cfg files only carry api_key; fall back to the
+    # official API endpoint instead of failing.
+    api_url = cfg.get("settings", "api_url", fallback=None) or "https://wakatime.com/api/v1"
 
-    if not api_key or not api_url:
-        return None, "No API config found in ~/.wakatime.cfg"
+    if not api_key:
+        return None, "No API key found in ~/.wakatime.cfg"
 
     url = f"{api_url}/users/current/stats/last_7_days"
 
     req = urllib.request.Request(url)
     req.add_header("Authorization", f"Bearer {api_key}")
-    req.add_header("X-Machine-Name", "Aarushs-MacBook-Pro")
+    req.add_header("X-Machine-Name", config.get_machine_name())
     req.add_header("Accept", "application/json")
 
     try:

@@ -1,4 +1,5 @@
 import argparse
+import concurrent.futures
 import sys
 
 from . import display
@@ -10,12 +11,17 @@ from . import config_check
 
 
 def collect_check_data():
-    notifs, notifs_err = github_check.get_notifications()
-    prs, prs_err = github_check.get_open_prs()
-    stats, stats_err = wakatime_check.get_stats()
+    # Network fetchers run concurrently; repo scan stays sequential (local git).
+    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+        fut_notifs = pool.submit(github_check.get_notifications)
+        fut_prs = pool.submit(github_check.get_open_prs)
+        fut_stats = pool.submit(wakatime_check.get_stats)
+        notifs, notifs_err = fut_notifs.result()
+        prs, prs_err = fut_prs.result()
+        stats, stats_err = fut_stats.result()
 
     repos = []
-    for repo in config.REPOS:
+    for repo in config.get_repos():
         branch, info, err = repo_check.git_status(repo["dir"])
         repos.append({
             "name": repo["name"],
@@ -29,7 +35,7 @@ def collect_check_data():
     return {
         "github": {
             "notifications": notifs if notifs_err is None else None,
-            "unread_notifications": sum(1 for n in (notifs or []) if n.get("unread")) if notifs_err is None else None,
+            "unread_notifications": github_check.count_unread(notifs) if notifs_err is None else None,
             "open_prs": prs if prs_err is None else None,
             "open_prs_count": len(prs or []) if prs_err is None else None,
             "errors": {"notifications": notifs_err, "prs": prs_err},

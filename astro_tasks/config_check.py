@@ -28,8 +28,14 @@ def run():
     else:
         display.print_warn("GitHub auth", "not logged in (run `gh auth login`)")
 
-    display.print_ok("Tracked repos", str(len(config.REPOS)))
-    for repo in config.REPOS:
+    if os.path.exists(os.path.expanduser("~/.config/astro-tasks/config.json")):
+        display.print_ok("User config", "~/.config/astro-tasks/config.json")
+    else:
+        display.print_info("User config", "not set (using built-in defaults)")
+
+    repos = config.get_repos()
+    display.print_ok("Tracked repos", str(len(repos)))
+    for repo in repos:
         git_dir = os.path.join(repo["dir"], ".git")
         exists = os.path.isdir(git_dir)
         icon = f"{Fore.GREEN}[+]{Style.RESET_ALL}" if exists else f"{Fore.YELLOW}[!]{Style.RESET_ALL}"

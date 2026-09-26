@@ -1,7 +1,13 @@
+import os
 import subprocess
 import json
 
 from . import config, display
+
+
+def count_unread(notifs):
+    """Count notifications with unread=True. Missing key counts as read."""
+    return sum(1 for n in (notifs or []) if n.get("unread", False))
 
 
 def get_notifications():
@@ -21,13 +27,12 @@ def get_notifications():
 def get_open_prs():
     # Run from any tracked repo so gh can find its git context
     cwd = None
-    for repo in config.REPOS:
-        import os
+    for repo in config.get_repos():
         if os.path.isdir(os.path.join(repo["dir"], ".git")):
             cwd = repo["dir"]
             break
     result = subprocess.run(
-        ["gh", "pr", "list", "--author", config.GITHUB_USER, "--state", "open",
+        ["gh", "pr", "list", "--author", config.get_github_user(), "--state", "open",
          "--json", "number,title,headRefName,baseRefName"],
         capture_output=True, text=True, timeout=15, cwd=cwd
     )
@@ -47,8 +52,7 @@ def run():
     if err:
         display.print_warn("Notifications", f"Could not fetch: {err}")
     else:
-        unread = sum(1 for n in notifs if not n.get("unread", False) is False)
-        display.print_ok("Unread notifications", str(unread))
+        display.print_ok("Unread notifications", str(count_unread(notifs)))
 
     prs, err = get_open_prs()
     if err:

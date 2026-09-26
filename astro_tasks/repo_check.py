@@ -42,7 +42,7 @@ def git_status(repo_dir):
 def run():
     display.print_section("Local Repo Scan")
 
-    for repo in config.REPOS:
+    for repo in config.get_repos():
         name = repo["name"]
         d = repo["dir"]
         branch, info, err = git_status(d)
