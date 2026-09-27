@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: astro-tasks
-Version: 0.2.1
+Version: 0.2.3
 Summary: Pre-flight checklist for developers — GitHub status, coding stats, repo health in one command
 Home-page: https://github.com/3ni8ma/astro-tasks
 Author: Aarush Karak
@@ -37,14 +37,15 @@ Dynamic: summary
 
 [![PyPI version](https://img.shields.io/pypi/v/astro-tasks)](https://pypi.org/project/astro-tasks/)
 [![Python](https://img.shields.io/pypi/pyversions/astro-tasks)](https://pypi.org/project/astro-tasks/)
-[![Downloads](https://img.shields.io/pypi/dm/astro-tasks)](https://pypi.org/project/astro-tasks/)
+[![Downloads](https://static.pepy.tech/badge/astro-tasks)](https://pepy.tech/project/astro-tasks)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/3ni8ma/astro-tasks)](https://github.com/3ni8ma/astro-tasks/stargazers)
+[![RepoRanker](https://reporanker.com/badge/3ni8ma/astro-tasks)](https://reporanker.com/repos/3ni8ma/astro-tasks)
 
 > Pre-flight checklist for developers. One command to check GitHub status,
 > coding stats, and local repo health before starting work.
 
-![Astro Tasks demo](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/astro-tasks-demo.png)
+![Astro Tasks](https://raw.githubusercontent.com/3ni8ma/astro-tasks/main/docs/Astro-Tasks-thumbnail.png)
 
 ## Features
 
@@ -103,11 +104,71 @@ astro check
     [!] 3ni8ma: branch: main | 2 unpushed
 ```
 
+`astro scan` — repos only, no API calls:
+
+```
+  [*] Local Repo Scan
+  ------------------------------------------
+    [+] 3ni8ma: branch: main | dirty
+    [+] cli-tool: branch: main | dirty
+    [+] TheCoderBros-Website: branch: main
+    [+] aarushkarak-website: branch: main
+    [+] react-hooks: branch: main
+    [+] tailwind-plugin: branch: main | dirty
+    [+] vite-plugin: branch: main | dirty
+    [+] astro-tasks: branch: main
+```
+
+`astro check --json` — same data, machine-readable (truncated):
+
+```json
+{
+  "github": {
+    "unread_notifications": 3,
+    "open_prs_count": 1,
+    "open_prs": [
+      {"number": 1, "title": "...", "headRefName": "feat", "baseRefName": "main"}
+    ],
+    "errors": {"notifications": null, "prs": null}
+  },
+  "coding_stats": {"human_readable_total": "40 hrs 12 mins"},
+  "coding_stats_error": null,
+  "repos": [
+    {"name": "astro-tasks", "branch": "main", "unpushed": 0, "dirty": false, "error": null}
+  ]
+}
+```
+
 ## Requirements
 
 - Python 3.8+
 - `gh` CLI authenticated (`gh auth status`)
-- WakaTime config at `~/.wakatime.cfg`
+- WakaTime API key in `~/.wakatime.cfg` (`api_url` optional — defaults to `https://wakatime.com/api/v1`)
+
+## Configuration
+
+Out of the box astro-tasks tracks a built-in repo list. To make it yours,
+create `~/.config/astro-tasks/config.json`:
+
+```json
+{
+  "github_user": "octocat",
+  "machine_name": "My-Mac",
+  "repos": [
+    {"name": "demo", "dir": "~/code/demo"}
+  ]
+}
+```
+
+All fields are optional — anything missing falls back to the built-ins.
+Environment variables override everything:
+
+| Variable | Overrides |
+|----------|-----------|
+| `ASTRO_GITHUB_USER` | `github_user` |
+| `ASTRO_MACHINE_NAME` | `machine_name` |
+
+Run `astro config` to see which sources are active.
 
 ## License
 

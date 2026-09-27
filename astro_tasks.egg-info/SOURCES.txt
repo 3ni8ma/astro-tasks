@@ -17,4 +17,5 @@ astro_tasks.egg-info/dependency_links.txt
 astro_tasks.egg-info/entry_points.txt
 astro_tasks.egg-info/requires.txt
 astro_tasks.egg-info/top_level.txt
+tests/test_improvements.py
 tests/test_json_output.py
