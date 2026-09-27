@@ -108,7 +108,32 @@ astro check
 
 - Python 3.8+
 - `gh` CLI authenticated (`gh auth status`)
-- WakaTime config at `~/.wakatime.cfg`
+- WakaTime API key in `~/.wakatime.cfg` (`api_url` optional — defaults to `https://wakatime.com/api/v1`)
+
+## Configuration
+
+Out of the box astro-tasks tracks a built-in repo list. To make it yours,
+create `~/.config/astro-tasks/config.json`:
+
+```json
+{
+  "github_user": "octocat",
+  "machine_name": "My-Mac",
+  "repos": [
+    {"name": "demo", "dir": "~/code/demo"}
+  ]
+}
+```
+
+All fields are optional — anything missing falls back to the built-ins.
+Environment variables override everything:
+
+| Variable | Overrides |
+|----------|-----------|
+| `ASTRO_GITHUB_USER` | `github_user` |
+| `ASTRO_MACHINE_NAME` | `machine_name` |
+
+Run `astro config` to see which sources are active.
 
 ## License
 
